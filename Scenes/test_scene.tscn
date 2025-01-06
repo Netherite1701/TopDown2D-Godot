@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c31m5xvntp83j"]
+
+[ext_resource type="PackedScene" uid="uid://bydptfy7xx46x" path="res://Scenes/player.tscn" id="1_4fi0s"]
+[ext_resource type="Texture2D" uid="uid://tj4q6s6soetm" path="res://icon.png" id="2_xkv26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi4k0"]
+size = Vector2(168.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea67f"]
+size = Vector2(39, 292)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(99, -232)
+scale = Vector2(0.5625, 4.875)
+texture = ExtResource("2_xkv26")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-77, -76)
+scale = Vector2(2.70313, 0.359375)
+texture = ExtResource("2_xkv26")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(65, 59)
+polygon = PackedVector2Array(-192, -108, -86, -87, -165, -36, -126, 4, -145, 61, -25, 78, 55, 42, 112, 80, 137, 33, 104, -47, 69, -91, -47, -89, 185, -109, 188, 112, -192, 109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-80.25, -76)
+shape = SubResource("RectangleShape2D_yi4k0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(100, -224)
+shape = SubResource("RectangleShape2D_ea67f")
+
+[node name="Player" parent="." instance=ExtResource("1_4fi0s")]
